@@ -1,4 +1,4 @@
-# Basic field class for form generator
+# Base field class for form generator
 
 ## Intro
 This class will help you to construct forms in PHP code.
