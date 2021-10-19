@@ -119,9 +119,9 @@ class FieldAttributes
      * Method fetches field name from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initName(array $fieldDescription)
+    protected function initName(array $fieldDescription): void
     {
         if (isset($fieldDescription['name'])) {
             $this->name = $fieldDescription['name'];
@@ -134,9 +134,9 @@ class FieldAttributes
      * Method fetches field CSS class from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initClass(array $fieldDescription)
+    protected function initClass(array $fieldDescription): void
     {
         if (isset($fieldDescription['class']) !== false) {
             $this->class = $fieldDescription['class'];
@@ -147,9 +147,9 @@ class FieldAttributes
      * Method fetches field required property from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initRequired(array $fieldDescription)
+    protected function initRequired(array $fieldDescription): void
     {
         if (isset($fieldDescription['required']) === false) {
             $this->required = false;
@@ -162,9 +162,9 @@ class FieldAttributes
      * Method fetches field custom property from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initCustom(array $fieldDescription)
+    protected function initCustom(array $fieldDescription): void
     {
         if (isset($fieldDescription['custom']) === false) {
             $this->custom = false;
@@ -177,9 +177,9 @@ class FieldAttributes
      * Method fetches field batch property from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initBatch(array $fieldDescription)
+    protected function initBatch(array $fieldDescription): void
     {
         if (isset($fieldDescription['batch']) === false) {
             $this->batch = false;
@@ -192,9 +192,9 @@ class FieldAttributes
      * Method fetches field disabled property from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initDisabled(array $fieldDescription)
+    protected function initDisabled(array $fieldDescription): void
     {
         if (isset($fieldDescription['disabled']) === false) {
             $this->disabled = false;
@@ -207,9 +207,9 @@ class FieldAttributes
      * Method fetches field toggler property from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function inittoggler(array $fieldDescription)
+    protected function inittoggler(array $fieldDescription): void
     {
         if (isset($fieldDescription['toggler']) === false) {
             $this->toggler = '';
@@ -222,9 +222,9 @@ class FieldAttributes
      * Method fetches field toggle value property from the description
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initToggleValue(array $fieldDescription)
+    protected function initToggleValue(array $fieldDescription): void
     {
         if (isset($fieldDescription['toggle-value']) === false || $this->toggler === '') {
             $this->toggleValue = '';
@@ -237,9 +237,9 @@ class FieldAttributes
      * Method fetches field title
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initTitle(array $fieldDescription)
+    protected function initTitle(array $fieldDescription): void
     {
         if (isset($fieldDescription['title']) === true) {
             $this->title = $fieldDescription['title'];
@@ -250,9 +250,9 @@ class FieldAttributes
      * Method fetches field's visibility
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initVisible(array $fieldDescription)
+    protected function initVisible(array $fieldDescription): void
     {
         if (isset($fieldDescription['visible']) === true) {
             $this->visible = $fieldDescription['visible'] == 1;
@@ -263,9 +263,9 @@ class FieldAttributes
      * Method fetches label display
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initHasLabel(array $fieldDescription)
+    protected function initHasLabel(array $fieldDescription): void
     {
         if (isset($fieldDescription['has-label']) === true) {
             $this->hasLabel = $fieldDescription['has-label'] == 1;
@@ -276,9 +276,9 @@ class FieldAttributes
      * Method fetches name prefix
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
-    protected function initNamePrefix(array $fieldDescription)
+    protected function initNamePrefix(array $fieldDescription): void
     {
         if (isset($fieldDescription['name-prefix']) === true) {
             $this->namePrefix = $fieldDescription['name-prefix'];
@@ -289,7 +289,7 @@ class FieldAttributes
      * Method fetches field type
      *
      * @param array $fieldDescription
-     *            Field description
+     *            field description
      */
     protected function initType(array $fieldDescription): void
     {
