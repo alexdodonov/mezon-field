@@ -1,7 +1,11 @@
-# Basic field class for form generator
+# Base field class for form generator
 
 ## Intro
 This class will help you to construct forms in PHP code.
+
+## More links
+
+This package relqtes to [Mezon Project](https://github.com/alexdodonov/mezon) and [Mezon Form Builder](https://github.com/alexdodonov/mezon-gui#form-builder).
 
 ## Installation
 
