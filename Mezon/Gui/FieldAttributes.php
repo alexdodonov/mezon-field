@@ -22,14 +22,14 @@ class FieldAttributes
      *
      * @var string
      */
-    protected $name;
+    protected $name = '';
 
     /**
      * Is field required
      *
      * @var bool
      */
-    protected $required;
+    protected $required = false;
 
     /**
      * CSS class
@@ -50,42 +50,42 @@ class FieldAttributes
      *
      * @var bool
      */
-    protected $custom;
+    protected $custom = false;
 
     /**
      * Is field batched
      *
      * @var bool
      */
-    protected $batch;
+    protected $batch = false;
 
     /**
      * Is field disabled
      *
      * @var bool
      */
-    protected $disabled;
+    protected $disabled = false;
 
     /**
      * toggler selector
      *
      * @var string
      */
-    protected $toggler;
+    protected $toggler = '';
 
     /**
      * Toggle value
      *
      * @var string
      */
-    protected $toggleValue;
+    protected $toggleValue = '';
 
     /**
      * Field value
      *
      * @var string
      */
-    protected $value;
+    protected $value = '';
 
     /**
      * Title value
