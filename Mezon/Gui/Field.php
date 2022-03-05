@@ -8,7 +8,7 @@ namespace Mezon\Gui;
  * @subpackage Field
  * @author Dodonov A.A.
  * @version v.1.0 (2019/08/20)
- * @copyright Copyright (c) 2019, aeon.org
+ * @copyright Copyright (c) 2019, http://aeon.su
  */
 
 /**
@@ -24,8 +24,8 @@ class Field extends FieldAttributes
      */
     public function html(): string
     {
-        return $this->namePrefix . $this->name . ($this->required ? 1 : 0) . ($this->custom ? 1 : 0) .
-            ($this->batch ? 1 : 0) . ($this->disabled ? 1 : 0) . $this->toggler . $this->toggleValue;
+        return $this->namePrefix . $this->getName() . ($this->isRequired() ? 1 : 0) . ($this->isCustom() ? 1 : 0) .
+            ($this->isBatch() ? 1 : 0) . ($this->disabled ? 1 : 0) . $this->toggler . $this->toggleValue;
     }
 
     /**
@@ -36,16 +36,6 @@ class Field extends FieldAttributes
     public function getTitle(): string
     {
         return $this->title;
-    }
-
-    /**
-     * Method returns of the field required
-     *
-     * @return bool Is field required
-     */
-    public function isRequired(): bool
-    {
-        return $this->required;
     }
 
     /**
@@ -76,16 +66,6 @@ class Field extends FieldAttributes
     public function fillAllRow(): bool
     {
         return false;
-    }
-
-    /**
-     * Getting field type
-     *
-     * @return string Field type
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**

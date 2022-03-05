@@ -8,7 +8,7 @@ namespace Mezon\Gui;
  * @subpackage Field
  * @author Dodonov A.A.
  * @version v.1.0 (2019/08/20)
- * @copyright Copyright (c) 2019, aeon.org
+ * @copyright Copyright (c) 2019, http://aeon.su
  */
 
 /**
@@ -22,14 +22,14 @@ class FieldAttributes
      *
      * @var string
      */
-    protected $name = '';
+    private $name = '';
 
     /**
      * Is field required
      *
      * @var bool
      */
-    protected $required = false;
+    private $required = false;
 
     /**
      * CSS class
@@ -50,14 +50,14 @@ class FieldAttributes
      *
      * @var bool
      */
-    protected $custom = false;
+    private $custom = false;
 
     /**
      * Is field batched
      *
      * @var bool
      */
-    protected $batch = false;
+    private $batch = false;
 
     /**
      * Is field disabled
@@ -109,11 +109,11 @@ class FieldAttributes
     protected $hasLabel = false;
 
     /**
-     * FIeld type
+     * Field type
      *
      * @var string
      */
-    protected $type = '';
+    private $type = '';
 
     /**
      * Method fetches field name from the description
@@ -121,7 +121,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initName(array $fieldDescription): void
+    private function initName(array $fieldDescription): void
     {
         if (isset($fieldDescription['name'])) {
             $this->name = $fieldDescription['name'];
@@ -136,7 +136,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initClass(array $fieldDescription): void
+    private function initClass(array $fieldDescription): void
     {
         if (isset($fieldDescription['class']) !== false) {
             $this->class = $fieldDescription['class'];
@@ -149,7 +149,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initRequired(array $fieldDescription): void
+    private function initRequired(array $fieldDescription): void
     {
         if (isset($fieldDescription['required']) === false) {
             $this->required = false;
@@ -164,7 +164,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initCustom(array $fieldDescription): void
+    private function initCustom(array $fieldDescription): void
     {
         if (isset($fieldDescription['custom']) === false) {
             $this->custom = false;
@@ -179,7 +179,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initBatch(array $fieldDescription): void
+    private function initBatch(array $fieldDescription): void
     {
         if (isset($fieldDescription['batch']) === false) {
             $this->batch = false;
@@ -194,7 +194,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initDisabled(array $fieldDescription): void
+    private function initDisabled(array $fieldDescription): void
     {
         if (isset($fieldDescription['disabled']) === false) {
             $this->disabled = false;
@@ -209,7 +209,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function inittoggler(array $fieldDescription): void
+    private function inittoggler(array $fieldDescription): void
     {
         if (isset($fieldDescription['toggler']) === false) {
             $this->toggler = '';
@@ -224,7 +224,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initToggleValue(array $fieldDescription): void
+    private function initToggleValue(array $fieldDescription): void
     {
         if (isset($fieldDescription['toggle-value']) === false || $this->toggler === '') {
             $this->toggleValue = '';
@@ -239,7 +239,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initTitle(array $fieldDescription): void
+    private function initTitle(array $fieldDescription): void
     {
         if (isset($fieldDescription['title']) === true) {
             $this->title = $fieldDescription['title'];
@@ -252,7 +252,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initVisible(array $fieldDescription): void
+    private function initVisible(array $fieldDescription): void
     {
         if (isset($fieldDescription['visible']) === true) {
             $this->visible = $fieldDescription['visible'] == 1;
@@ -265,7 +265,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initHasLabel(array $fieldDescription): void
+    private function initHasLabel(array $fieldDescription): void
     {
         if (isset($fieldDescription['has-label']) === true) {
             $this->hasLabel = $fieldDescription['has-label'] == 1;
@@ -278,7 +278,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initNamePrefix(array $fieldDescription): void
+    private function initNamePrefix(array $fieldDescription): void
     {
         if (isset($fieldDescription['name-prefix']) === true) {
             $this->namePrefix = $fieldDescription['name-prefix'];
@@ -291,7 +291,7 @@ class FieldAttributes
      * @param array $fieldDescription
      *            field description
      */
-    protected function initType(array $fieldDescription): void
+    private function initType(array $fieldDescription): void
     {
         if (isset($fieldDescription['type'])) {
             $this->type = $fieldDescription['type'];
@@ -337,5 +337,55 @@ class FieldAttributes
         $this->initHasLabel($fieldDescription);
 
         $this->value = $value;
+    }
+
+    /**
+     * Method returns type
+     *
+     * @return string type
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * Method returns name
+     *
+     * @return string name
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * Method returns if required
+     *
+     * @return bool required
+     */
+    public function isRequired(): bool
+    {
+        return $this->required;
+    }
+
+    /**
+     * Method returns is custom
+     *
+     * @return bool is custom
+     */
+    public function isCustom(): bool
+    {
+        return $this->custom;
+    }
+
+    /**
+     * Method returns is batch
+     *
+     * @return bool is batch
+     */
+    public function isBatch(): bool
+    {
+        return $this->batch;
     }
 }
