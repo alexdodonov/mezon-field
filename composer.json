@@ -34,6 +34,11 @@
 	"scripts": {
 		"test": "php ./vendor/phpunit/phpunit/phpunit",
 		"psalm": "php ./vendor/vimeo/psalm/psalm --show-info=true --no-cache",
-		"infection" : "php ./vendor/infection/infection/bin/infection --threads=4 --min-msi=26"
+		"infection" : "php ./vendor/infection/infection/bin/infection --threads=4 --min-msi=29"
+	},
+	"config": {
+		"allow-plugins": {
+			"infection/extension-installer": true
+		}
 	}
 }
